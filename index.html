@@ -3,215 +3,790 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prabha Global Solutions - Your Global Partner for Winning Proposals</title>
+    <title>Prabha Global Solutions - Delivering Technology, Talent, and Transformation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">Prabha Global Solutions</div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#process">Process</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <a class="logo" onclick="showPage('home')">Prabha Global Solutions</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item active">
+                    <a onclick="showPage('home')">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a>Company</a>
+                    <ul class="dropdown-menu">
+                        <li><a onclick="showPage('about')">About Us</a></li>
+                        <li><a onclick="showPage('leadership')">Leadership Team</a></li>
+                        <li><a onclick="showPage('careers')">Careers</a></li>
+                        <li><a onclick="showPage('partners')">Partners</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a>Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a onclick="showPage('oracle-cloud')">Oracle Cloud</a></li>
+                        <li><a onclick="showPage('cybersecurity')">Cybersecurity</a></li>
+                        <li><a onclick="showPage('peoplesoft')">PeopleSoft</a></li>
+                        <li><a onclick="showPage('ai-data')">AI & Data</a></li>
+                        <li><a onclick="showPage('it-staffing')">IT Staffing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a>Industries</a>
+                    <ul class="dropdown-menu">
+                        <li><a onclick="showPage('public-sector')">Public Sector</a></li>
+                        <li><a onclick="showPage('healthcare')">Healthcare</a></li>
+                        <li><a onclick="showPage('financial')">Financial Services</a></li>
+                        <li><a onclick="showPage('manufacturing')">Manufacturing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a onclick="showPage('case-studies')">Case Studies</a>
+                </li>
+                <li class="nav-item">
+                    <a onclick="showPage('contact')">Contact</a>
+                </li>
             </ul>
-            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle Menu">☰</button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Your Global Partner for Winning Proposals</h1>
-            <p>Expert bid management and proposal writing services that help you secure government contracts and accelerate business growth worldwide</p>
-            <a href="#contact" class="cta-button">Get Free Consultation</a>
-        </div>
-    </section>
+    <!-- HOME PAGE -->
+    <div id="home" class="page-content active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Delivering Technology, Talent, and Transformation</h1>
+                <p class="hero-subtitle">Empowering public and private sectors with innovative cloud solutions, cybersecurity expertise, and strategic digital transformation services for sustainable growth</p>
+                <div class="hero-ctas">
+                    <a class="cta-primary" onclick="showPage('contact')">
+                        Request a Consultation
+                        <span>→</span>
+                    </a>
+                    <a class="cta-secondary" onclick="showPage('case-studies')">
+                        Explore Our Work
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-    <!-- Services Section -->
-    <section id="services" class="section">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-subtitle">Comprehensive solutions to help you win more contracts and proposals</p>
-            
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">📋</div>
-                    <h3>Bid Management</h3>
-                    <p>End-to-end bid management services from opportunity identification to submission, ensuring your proposals meet all requirements and deadlines.</p>
+        <!-- Services Section -->
+        <section class="services-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Core Solutions</h2>
+                    <p class="section-subtitle">Comprehensive technology services designed to accelerate your digital transformation journey with measurable results</p>
                 </div>
                 
-                <div class="service-card fade-in">
-                    <div class="service-icon">✍️</div>
-                    <h3>Proposal Writing</h3>
-                    <p>Professional proposal writers who craft compelling, compliant responses that highlight your strengths and differentiate you from competitors.</p>
+                <div class="services-grid">
+                    <div class="service-card" onclick="showPage('oracle-cloud')">
+                        <div class="service-icon">☁️</div>
+                        <h3 class="service-title">Cloud & Digital Solutions</h3>
+                        <p class="service-description">Oracle Cloud, Microsoft 365, Salesforce, Workday implementations with 40% faster deployment and 99.9% uptime</p>
+                        <a class="service-link">Learn More →</a>
+                    </div>
+                    
+                    <div class="service-card" onclick="showPage('cybersecurity')">
+                        <div class="service-icon">🔒</div>
+                        <h3 class="service-title">Cybersecurity Excellence</h3>
+                        <p class="service-description">Advanced threat detection, zero-trust architecture, and compliance solutions protecting 2M+ records with zero breaches</p>
+                        <a class="service-link">Learn More →</a>
+                    </div>
+                    
+                    <div class="service-card" onclick="showPage('peoplesoft')">
+                        <div class="service-icon">💼</div>
+                        <h3 class="service-title">Enterprise Applications</h3>
+                        <p class="service-description">PeopleSoft, Banner ERP modernization and integration with 60% faster processing and enhanced user experience</p>
+                        <a class="service-link">Learn More →</a>
+                    </div>
+                    
+                    <div class="service-card" onclick="showPage('ai-data')">
+                        <div class="service-icon">🤖</div>
+                        <h3 class="service-title">AI & Data Solutions</h3>
+                        <p class="service-description">AI/GenAI services, analytics, and data governance solutions driving 35% efficiency improvements</p>
+                        <a class="service-link">Learn More →</a>
+                    </div>
+                    
+                    <div class="service-card" onclick="showPage('it-staffing')">
+                        <div class="service-icon">👥</div>
+                        <h3 class="service-title">Expert IT Staffing</h3>
+                        <p class="service-description">OEM-certified professionals and managed service pods with 95% client retention and 24/7 support</p>
+                        <a class="service-link">Learn More →</a>
+                    </div>
+					
+					<div class="service-card" onclick="showPage('managed-services')">
+						<div class="service-icon">⚙️</div>
+						<h3 class="service-title">Managed Services</h3>
+						<p class="service-description">24/7 infrastructure monitoring, maintenance, and support services with guaranteed SLAs and proactive issue resolution</p>
+						<a class="service-link">Learn More →</a>
+					</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industries Section -->
+        <section class="industries-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Industries We Transform</h2>
+                    <p class="section-subtitle">Delivering specialized solutions across diverse sectors with deep domain expertise and proven results</p>
                 </div>
                 
-                <div class="service-card fade-in">
-                    <div class="service-icon">🎯</div>
-                    <h3>Capture Management</h3>
-                    <p>Strategic capture planning to position your organization for success before the RFP is released, increasing your win probability.</p>
+                <div class="industries-grid">
+                    <div class="industry-card" onclick="showPage('public-sector')">
+                        <div class="industry-icon">🏛️</div>
+                        <h3 class="industry-title">Public Sector</h3>
+                        <p class="industry-subtitle">State, Local & Education</p>
+                    </div>
+                    <div class="industry-card" onclick="showPage('healthcare')">
+                        <div class="industry-icon">🏥</div>
+                        <h3 class="industry-title">Healthcare</h3>
+                        <p class="industry-subtitle">Providers & Life Sciences</p>
+                    </div>
+                    <div class="industry-card" onclick="showPage('financial')">
+                        <div class="industry-icon">🏦</div>
+                        <h3 class="industry-title">Financial Services</h3>
+                        <p class="industry-subtitle">Banking & Insurance</p>
+                    </div>
+                    <div class="industry-card" onclick="showPage('manufacturing')">
+                        <div class="industry-icon">🏭</div>
+                        <h3 class="industry-title">Manufacturing</h3>
+                        <p class="industry-subtitle">Industrial & Automotive</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="why-choose-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Why Choose Prabha Global Solutions?</h2>
+                    <p class="section-subtitle">Our unique combination of expertise, experience, and commitment delivers exceptional results</p>
                 </div>
                 
-                <div class="service-card fade-in">
-                    <div class="service-icon">💰</div>
-                    <h3>Grant Writing</h3>
-                    <p>Expert grant writing services for federal, state, and private funding opportunities to support your organization's growth and initiatives.</p>
+                <div class="differentiators-grid">
+                    <div class="differentiator-card">
+                        <div class="diff-icon">🌐</div>
+                        <h3 class="diff-title">Public + Private Expertise</h3>
+                        <p class="diff-description">Unique cross-sector experience enabling seamless implementations across government and commercial environments with deep understanding of compliance requirements.</p>
+                    </div>
+                    
+                    <div class="differentiator-card">
+                        <div class="diff-icon">🎓</div>
+                        <h3 class="diff-title">OEM-Certified Talent</h3>
+                        <p class="diff-description">Team of 200+ certified professionals with extensive experience in Oracle, Microsoft, Salesforce, and other leading enterprise platforms.</p>
+                    </div>
+                    
+                    <div class="differentiator-card">
+                        <div class="diff-icon">🏆</div>
+                        <h3 class="diff-title">Proven SLED Success</h3>
+                        <p class="diff-description">500+ successful projects for State, Local, and Education sectors with $2B+ in contract value and 95% client satisfaction rate.</p>
+                    </div>
+                    
+                    <div class="differentiator-card">
+                        <div class="diff-icon">🔧</div>
+                        <h3 class="diff-title">24x7 Global Support</h3>
+                        <p class="diff-description">Round-the-clock monitoring and support services with 99.9% uptime SLA and dedicated account management for enterprise clients.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Studies Section -->
+        <section class="case-studies-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" style="color: white;">Featured Success Stories</h2>
+                    <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Real results delivered for our clients across various industries and sectors</p>
                 </div>
                 
-                <div class="service-card fade-in">
-                    <div class="service-icon">📊</div>
-                    <h3>Pricing Strategy</h3>
-                    <p>Competitive pricing analysis and strategy development to ensure your bids are both competitive and profitable.</p>
+                <div class="case-studies-grid">
+                    <div class="case-study-card">
+                        <div class="case-category">Oracle Cloud Migration</div>
+                        <h3 class="case-title">State Government Digital Transformation</h3>
+                        <p class="case-result">Successfully migrated 15+ legacy systems to Oracle Cloud Infrastructure, achieving significant cost savings and improved performance.</p>
+                        <div class="case-metrics">
+                            <div class="metric">
+                                <span class="metric-number">40%</span>
+                                <div class="metric-label">Cost Reduction</div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-number">99.9%</span>
+                                <div class="metric-label">Uptime SLA</div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-number">8</span>
+                                <div class="metric-label">Months Timeline</div>
+                            </div>
+                        </div>
+                        <a class="case-link" onclick="showPage('case-studies')">Read Full Story →</a>
+                    </div>
+                    
+                    <div class="case-study-card">
+                        <div class="case-category">Cybersecurity Implementation</div>
+                        <h3 class="case-title">Healthcare System Security Overhaul</h3>
+                        <p class="case-result">Implemented comprehensive zero-trust security framework protecting sensitive patient data across multiple facilities.</p>
+                        <div class="case-metrics">
+                            <div class="metric">
+                                <span class="metric-number">2M+</span>
+                                <div class="metric-label">Records Protected</div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-number">0</span>
+                                <div class="metric-label">Security Incidents</div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-number">24</span>
+                                <div class="metric-label">Months Success</div>
+                            </div>
+                        </div>
+                        <a class="case-link" onclick="showPage('case-studies')">Read Full Story →</a>
+                    </div>
+                    
+                    <div class="case-study-card">
+                        <div class="case-category">PeopleSoft Modernization</div>
+                        <h3 class="case-title">University Campus Solutions Upgrade</h3>
+                        <p class="case-result">Modernized student information systems serving 50,000+ students with enhanced user experience and performance.</p>
+                        <div class="case-metrics">
+                            <div class="metric">
+                                <span class="metric-number">50K+</span>
+                                <div class="metric-label">Students Served</div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-number">60%</span>
+                                <div class="metric-label">Faster Processing</div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-number">98%</span>
+                                <div class="metric-label">User Satisfaction</div>
+                            </div>
+                        </div>
+                        <a class="case-link" onclick="showPage('case-studies')">Read Full Story →</a>
+                    </div>
                 </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-icon">🔍</div>
-                    <h3>Compliance Review</h3>
-                    <p>Thorough compliance reviews to ensure all requirements are met and your proposal is technically compliant before submission.</p>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="final-cta-section">
+            <div class="container">
+                <div class="final-cta-content">
+                    <h2 class="final-cta-title">Let's Start Shaping Your Transformation Journey</h2>
+                    <p class="final-cta-subtitle">Ready to unlock the full potential of your technology investments? Our experts are here to help you navigate the complexities of digital transformation with proven methodologies and measurable results.</p>
+                    <a class="cta-primary" onclick="showPage('contact')" style="display: inline-flex; width: auto;">
+                        Get Started Today
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about" class="page-content">
+        <div class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1 class="page-title">About Prabha Global Solutions</h1>
+                    <p class="page-subtitle">Transforming businesses through innovative technology solutions since 2013</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Why Choose Prabha Global Solutions?</h2>
-                    <p>With over a decade of experience in government contracting and proposal development, we understand what it takes to win. Our team of certified proposal professionals has helped hundreds of clients secure millions in contract awards across diverse industries and markets.</p>
-                    <p>We combine deep industry knowledge with proven methodologies to deliver results that exceed expectations. From small businesses to large enterprises, we tailor our approach to meet your unique needs and objectives in the global marketplace.</p>
+        
+        <div class="content-section" style="background: var(--light-bg);">
+            <div class="container">
+                <div class="content-grid">
+                    <div>
+                        <div class="content-card">
+                            <h3>Our Story</h3>
+                            <p>Founded in 2013, Prabha Global Solutions has emerged as a trusted partner for organizations seeking to harness the power of technology for competitive advantage. From our headquarters in Washington DC, we serve clients across the globe, specializing in cloud transformation, cybersecurity, and enterprise application services that drive measurable business outcomes.</p>
+                        </div>
+                        
+                        <div class="content-card">
+                            <h3>Global Presence</h3>
+                            <p>With delivery centers across North America and strategic partnerships worldwide, we provide 24/7 support and local expertise wherever our clients need us. Our global footprint enables us to deliver consistent, high-quality services while maintaining the agility and personalized attention of a boutique consultancy.</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="content-card">
+                            <h3>Our Mission</h3>
+                            <p>To deliver exceptional technology solutions that enable our clients to modernize operations, enhance security, and drive digital transformation. Through expertise in cloud technologies, cybersecurity, and enterprise applications, we help organizations navigate complexity and achieve sustainable growth.</p>
+                        </div>
+                        
+                        <div class="content-card">
+                            <h3>Core Values</h3>
+                            <p><strong>Excellence:</strong> Highest standards in delivery and service<br>
+                            <strong>Innovation:</strong> Embracing cutting-edge technologies<br>
+                            <strong>Integrity:</strong> Honest, transparent business practices<br>
+                            <strong>Partnership:</strong> Long-term client relationships<br>
+                            <strong>Impact:</strong> Measurable results that matter</p>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="stats-grid">
-                    <div class="stat">
-                        <span class="stat-number">500+</span>
-                        <div class="stat-label">Successful Proposals</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ORACLE CLOUD PAGE -->
+    <div id="oracle-cloud" class="page-content">
+        <div class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1 class="page-title">Oracle Cloud Solutions</h1>
+                    <p class="page-subtitle">Comprehensive Oracle Cloud services driving enterprise transformation and operational excellence</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div>
+                        <div class="content-card">
+                            <h3>Oracle Cloud Infrastructure (OCI)</h3>
+                            <p>Migrate, implement, and optimize your enterprise workloads on Oracle's high-performance cloud platform. Our certified architects design solutions that deliver superior performance, enhanced security, and significant cost savings compared to other cloud providers.</p>
+                        </div>
+                        
+                        <div class="content-card">
+                            <h3>Oracle ERP & HCM</h3>
+                            <p>Transform your business processes with Oracle's comprehensive ERP and HCM cloud applications. From financial management to human capital management, we ensure smooth implementation and adoption across your organization.</p>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">85%</span>
-                        <div class="stat-label">Win Rate</div>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">$2B+</span>
-                        <div class="stat-label">Contract Value Won</div>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">24/7</span>
-                        <div class="stat-label">Support Available</div>
+                    
+                    <div>
+                        <div class="content-card">
+                            <h3>Database & Analytics</h3>
+                            <p>Leverage Oracle's autonomous database capabilities and advanced analytics tools to unlock insights from your data. Our solutions include data migration, performance optimization, and business intelligence implementation.</p>
+                        </div>
+                        
+                        <div class="content-card">
+                            <h3>24/7 Managed Services</h3>
+                            <p>Comprehensive managed services for your Oracle Cloud environment including monitoring, maintenance, security management, and performance optimization with guaranteed SLAs and dedicated support teams.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Process Section -->
-    <section id="process" class="section">
-        <div class="container">
-            <h2 class="section-title">Our Process</h2>
-            <p class="section-subtitle">A proven methodology that consistently delivers winning results</p>
-            
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3>Discovery & Analysis</h3>
-                    <p>We analyze the opportunity, requirements, and competitive landscape to develop a winning strategy.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3>Strategy Development</h3>
-                    <p>Create a comprehensive proposal strategy that highlights your unique value proposition and competitive advantages.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3>Content Creation</h3>
-                    <p>Our expert writers develop compelling, compliant content that addresses all requirements and evaluation criteria.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h3>Review & Refinement</h3>
-                    <p>Multiple quality reviews ensure accuracy, compliance, and maximum impact before final submission.</p>
+    <!-- CYBERSECURITY PAGE -->
+    <div id="cybersecurity" class="page-content">
+        <div class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1 class="page-title">Cybersecurity Excellence</h1>
+                    <p class="page-subtitle">Comprehensive security solutions protecting critical assets with zero-trust architecture</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact">
-        <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h2>Ready to Win Your Next Contract?</h2>
-                    <p>Contact us today for a free consultation and learn how our proven approach can help you secure more government contracts and grow your business.</p>
+        
+        <div class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div>
+                        <div class="content-card">
+                            <h3>Threat Detection & Response</h3>
+                            <p>Advanced AI-powered threat detection with 24/7 SOC monitoring and rapid incident response capabilities to protect your organization from evolving cyber threats.</p>
+                        </div>
+                        
+                        <div class="content-card">
+                            <h3>Zero-Trust Architecture</h3>
+                            <p>Implementation of comprehensive zero-trust security frameworks that verify every user and device before granting access to critical systems and data.</p>
+                        </div>
+                    </div>
                     
-                    <ul class="contact-details">
-                        <li><span>📧</span> info@prabhaglobalsolutions.com</li>
-                        <li><span>📞</span> +1 (555) 123-4567</li>
-                        <li><span>📍</span> 1200 Business Plaza, Suite 500, Washington DC 20005</li>
-                        <li><span>🕐</span> Available 24/7 for urgent proposals</li>
-                    </ul>
+                    <div>
+                        <div class="content-card">
+                            <h3>Compliance & Risk Management</h3>
+                            <p>Comprehensive compliance frameworks for HIPAA, SOX, FedRAMP, and other regulatory requirements with continuous monitoring and reporting capabilities.</p>
+                        </div>
+                        
+                        <div class="content-card">
+                            <h3>Security Assessment</h3>
+                            <p>Vulnerability assessments, penetration testing, and security posture evaluations to identify and remediate potential security gaps.</p>
+                        </div>
+                    </div>
                 </div>
-                
-                <form class="contact-form" onsubmit="submitForm(event)">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="company">Company Name</label>
-                        <input type="text" id="company" name="company">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="service">Service Interested In</label>
-                        <select id="service" name="service" style="width: 100%; padding: 1rem; border: none; border-radius: 8px; background: rgba(255, 255, 255, 0.9); color: #1f2937; font-size: 1rem;">
-                            <option value="">Select a service</option>
-                            <option value="bid-management">Bid Management</option>
-                            <option value="proposal-writing">Proposal Writing</option>
-                            <option value="capture-management">Capture Management</option>
-                            <option value="grant-writing">Grant Writing</option>
-                            <option value="pricing-strategy">Pricing Strategy</option>
-                            <option value="compliance-review">Compliance Review</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Project Details *</label>
-                        <textarea id="message" name="message" placeholder="Please describe your upcoming opportunity, timeline, and any specific requirements..." required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Send Inquiry</button>
-                </form>
             </div>
         </div>
-    </section>
+    </div>
+
+    <!-- MANAGEDSERVICES PAGE -->
+	<div id="managed-services" class="page-content">
+		<div class="page-header">
+			<div class="container">
+				<div class="page-header-content">
+					<h1 class="page-title">Managed Services</h1>
+					<p class="page-subtitle">24/7 infrastructure monitoring and support with guaranteed SLAs</p>
+				</div>
+			</div>
+		</div>
+		<div class="content-section">
+			<div class="container">
+				<div class="content-card">
+					<h3>Comprehensive IT Management</h3>
+					<p>Round-the-clock monitoring, maintenance, and support for your IT infrastructure. Our managed services include proactive monitoring, patch management, security updates, and performance optimization with guaranteed SLAs.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page-content">
+        <div class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1 class="page-title">Contact Us</h1>
+                    <p class="page-subtitle">Ready to start your transformation journey? Get in touch with our experts</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-form-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div>
+                        <div class="content-card">
+                            <h3>Get in Touch</h3>
+                            <p>Our team of certified experts is ready to discuss your technology challenges and help you identify the best solutions for your organization. We provide free consultations and can respond to urgent requests within hours.</p>
+                            
+                            <div style="margin-top: 2rem;">
+                                <p style="margin-bottom: 1rem;"><strong>📧 Email:</strong> <a href="mailto:info@prabhaglobalsolutions.com" style="color: #6366f1;">info@prabhaglobalsolutions.com</a></p>
+                                <p style="margin-bottom: 1rem;"><strong>📞 Phone:</strong> <a href="tel:+15551234567" style="color: #6366f1;">+1 (555) 123-4567</a></p>
+                                <p style="margin-bottom: 1rem;"><strong>📍 Address:</strong> 1200 Business Plaza, Suite 500, Washington DC 20005</p>
+                                <p style="margin-bottom: 1rem;"><strong>🕐 Hours:</strong> Available 24/7 for critical support</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="contact-form">
+                            <h3 style="margin-bottom: 2rem; text-align: center; color: #1f2937;">Send Us a Message</h3>
+                            <form onsubmit="submitContactForm(event)" id="contactForm">
+                                <div class="form-group">
+                                    <label for="name">Full Name *</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="company">Company/Organization</label>
+                                    <input type="text" id="company" name="company">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="service">Primary Interest</label>
+                                    <select id="service" name="service">
+                                        <option value="">Select a service area</option>
+                                        <option value="oracle-cloud">Oracle Cloud Solutions</option>
+                                        <option value="cybersecurity">Cybersecurity</option>
+                                        <option value="enterprise-apps">Enterprise Applications</option>
+                                        <option value="ai-data">AI & Data Solutions</option>
+                                        <option value="it-staffing">IT Staffing & Augmentation</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message">Project Details *</label>
+                                    <textarea id="message" name="message" required placeholder="Please describe your project requirements, current challenges, timeline, and any specific objectives..."></textarea>
+                                </div>
+                                
+                                <button type="submit" class="submit-btn">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Service Pages -->
+    <div id="peoplesoft" class="page-content">
+        <div class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1 class="page-title">PeopleSoft Solutions</h1>
+                    <p class="page-subtitle">Modernize and optimize your PeopleSoft environment with expert implementation and support services</p>
+                </div>
+            </div>
+        </div>
+        <div class="content-section">
+            <div class="container">
+                <div class="content-card">
+                    <h3>PeopleSoft Modernization</h3>
+                    <p>Complete PeopleSoft implementation, upgrade, and optimization services including HCM, Financials, and Campus Solutions. Our certified consultants ensure seamless migration and enhanced user experience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ai-data" class="page-content">
+        <div class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1 class="page-title">AI & Data Solutions</h1>
+                    <p class="page-subtitle">Transform your business with artificial intelligence and advanced data analytics</p>
+                </div>
+            </div>
+        </div>
+        <div class="content-section">
+            <div class="container">
+                <div class="content-card">
+                    <h3>AI/GenAI Implementation</h3>
+                    <p>Strategic AI implementation services including machine learning, natural language processing, and generative AI solutions. Our experts help you harness the power of AI to drive innovation and efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="it-staffing" class="page-content">
+        <div class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1 class="page-title">IT Staffing & Augmentation</h1>
+                    <p class="page-subtitle">Access top-tier IT talent and managed service pods to accelerate your projects</p>
+                </div>
+            </div>
+        </div>
+        <div class="content-section">
+            <div class="container">
+                <div class="content-card">
+                    <h3>Expert IT Professionals</h3>
+                    <p>OEM-certified professionals in Oracle, Microsoft, Salesforce, and other enterprise technologies. Our managed service pods provide dedicated teams with guaranteed SLAs and 24/7 support.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="case-studies" class="page-content">
+        <div class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1 class="page-title">Case Studies</h1>
+                    <p class="page-subtitle">Real-world success stories and measurable results from our client engagements</p>
+                </div>
+            </div>
+        </div>
+        <div class="content-section">
+            <div class="container">
+                <div class="content-card">
+                    <h3>Client Success Stories</h3>
+                    <p>Explore our comprehensive case studies showcasing successful implementations across various industries and technology platforms. Each case study details the challenges, solutions, and measurable outcomes achieved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Industry Pages -->
+    <div id="public-sector" class="page-content">
+        <div class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1 class="page-title">Public Sector Solutions</h1>
+                    <p class="page-subtitle">Specialized technology services for state, local, and education organizations</p>
+                </div>
+            </div>
+        </div>
+        <div class="content-section">
+            <div class="container">
+                <div class="content-card">
+                    <h3>Government & Education Excellence</h3>
+                    <p>Deep expertise in public sector requirements including compliance, security, and budget constraints. We deliver solutions that enhance citizen services and operational efficiency while meeting regulatory requirements.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="healthcare" class="page-content">
+        <div class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1 class="page-title">Healthcare Solutions</h1>
+                    <p class="page-subtitle">Secure, compliant technology solutions for healthcare providers and life sciences</p>
+                </div>
+            </div>
+        </div>
+        <div class="content-section">
+            <div class="container">
+                <div class="content-card">
+                    <h3>Healthcare IT Excellence</h3>
+                    <p>HIPAA-compliant solutions designed specifically for healthcare providers, including EHR integration, cybersecurity, and cloud migration services that protect patient data and improve care delivery.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="financial" class="page-content">
+        <div class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1 class="page-title">Financial Services</h1>
+                    <p class="page-subtitle">Secure, scalable solutions for banking, insurance, and financial institutions</p>
+                </div>
+            </div>
+        </div>
+        <div class="content-section">
+            <div class="container">
+                <div class="content-card">
+                    <h3>Financial Technology Solutions</h3>
+                    <p>Specialized solutions for financial services including regulatory compliance, risk management, and digital transformation initiatives that enhance customer experience while maintaining security and compliance.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="manufacturing" class="page-content">
+        <div class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1 class="page-title">Manufacturing Solutions</h1>
+                    <p class="page-subtitle">Industrial technology solutions for manufacturing and automotive sectors</p>
+                </div>
+            </div>
+        </div>
+        <div class="content-section">
+            <div class="container">
+                <div class="content-card">
+                    <h3>Industrial Innovation</h3>
+                    <p>ERP, supply chain management, and IoT solutions designed to optimize manufacturing operations, improve quality control, and enable Industry 4.0 initiatives for competitive advantage.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Placeholder pages for other menu items -->
+    <div id="leadership" class="page-content">
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title">Leadership Team</h1>
+                <p class="page-subtitle">Meet the experienced leaders driving innovation and excellence</p>
+            </div>
+        </div>
+        <div class="content-section">
+            <div class="container">
+                <div class="content-card">
+                    <h3>Our Leadership</h3>
+                    <p>Our executive team brings decades of combined experience in technology consulting, enterprise solutions, and digital transformation across public and private sectors.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="careers" class="page-content">
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title">Careers</h1>
+                <p class="page-subtitle">Join our team of technology experts and shape the future of digital transformation</p>
+            </div>
+        </div>
+        <div class="content-section">
+            <div class="container">
+                <div class="content-card">
+                    <h3>Work With Us</h3>
+                    <p>We're always looking for talented professionals to join our growing team. Explore opportunities in cloud computing, cybersecurity, enterprise applications, and consulting across our global offices.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="partners" class="page-content">
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title">Strategic Partners</h1>
+                <p class="page-subtitle">Collaborating with industry leaders to deliver exceptional solutions</p>
+            </div>
+        </div>
+        <div class="content-section">
+            <div class="container">
+                <div class="content-card">
+                    <h3>Technology Partnerships</h3>
+                    <p>We maintain strategic partnerships with Oracle, Microsoft, Salesforce, and other leading technology vendors to ensure our clients receive the highest quality implementations and support.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Prabha Global Solutions. All rights reserved. | Empowering businesses worldwide to win government contracts since 2013.</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">Prabha Global Solutions</div>
+                    <p class="footer-description">Delivering technology, talent, and transformation services to public and private sector organizations worldwide. Trusted partner for digital transformation since 2013.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
+                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-link" aria-label="YouTube">📺</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a onclick="showPage('oracle-cloud')">Oracle Cloud</a></li>
+                        <li><a onclick="showPage('cybersecurity')">Cybersecurity</a></li>
+                        <li><a onclick="showPage('peoplesoft')">PeopleSoft</a></li>
+                        <li><a onclick="showPage('ai-data')">AI & Data</a></li>
+                        <li><a onclick="showPage('it-staffing')">IT Staffing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Industries</h3>
+                    <ul>
+                        <li><a onclick="showPage('public-sector')">Public Sector</a></li>
+                        <li><a onclick="showPage('healthcare')">Healthcare</a></li>
+                        <li><a onclick="showPage('financial')">Financial</a></li>
+                        <li><a onclick="showPage('manufacturing')">Manufacturing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a onclick="showPage('about')">About Us</a></li>
+                        <li><a onclick="showPage('leadership')">Leadership</a></li>
+                        <li><a onclick="showPage('careers')">Careers</a></li>
+                        <li><a onclick="showPage('partners')">Partners</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a onclick="showPage('case-studies')">Case Studies</a></li>
+                        <li><a onclick="showPage('contact')">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Prabha Global Solutions. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                        <a href="#accessibility">Accessibility</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
-	
-    <script src="script.js"></script>
 
+    <script src="script.js"></script>
+	
 </body>
 </html>

@@ -1,40 +1,181 @@
-// Mobile menu toggle
-	function toggleMenu() {
-		const menu = document.querySelector('.nav-menu');
-		menu.classList.toggle('active');
+// Page Navigation System
+function showPage(pageId) {
+	// Hide all pages
+	const pages = document.querySelectorAll('.page-content');
+	pages.forEach(page => {
+		page.classList.remove('active');
+	});
+	
+	// Show selected page
+	const targetPage = document.getElementById(pageId);
+	if (targetPage) {
+		targetPage.classList.add('active');
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+		
+		// Update active nav state
+		updateActiveNav(pageId);
 	}
+	
+	// Close mobile menu
+	const menu = document.querySelector('.nav-menu');
+	const menuBtn = document.querySelector('.mobile-menu-btn');
+	if (menu.classList.contains('active')) {
+		menu.classList.remove('active');
+		menuBtn.textContent = '☰';
+	}
+}
 
-	// Smooth scrolling for navigation links
-	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-		anchor.addEventListener('click', function (e) {
+function updateActiveNav(pageId) {
+	// Remove active class from all nav items
+	document.querySelectorAll('.nav-item').forEach(item => {
+		item.classList.remove('active');
+	});
+	
+	// Add active class to relevant nav item based on page
+	const navItems = document.querySelectorAll('.nav-item');
+	if (pageId === 'home') {
+		navItems[0]?.classList.add('active');
+	} else if (['about', 'leadership', 'careers', 'partners'].includes(pageId)) {
+		navItems[1]?.classList.add('active');
+	} else if (['oracle-cloud', 'cybersecurity', 'peoplesoft', 'ai-data', 'it-staffing'].includes(pageId)) {
+		navItems[2]?.classList.add('active');
+	} else if (['public-sector', 'healthcare', 'financial', 'manufacturing'].includes(pageId)) {
+		navItems[3]?.classList.add('active');
+	} else if (pageId === 'case-studies') {
+		navItems[4]?.classList.add('active');
+	} else if (pageId === 'contact') {
+		navItems[5]?.classList.add('active');
+	}
+}
+
+// Mobile menu toggle
+function toggleMenu() {
+	const menu = document.querySelector('.nav-menu');
+	const menuBtn = document.querySelector('.mobile-menu-btn');
+	menu.classList.toggle('active');
+	menuBtn.textContent = menu.classList.contains('active') ? '✕' : '☰';
+}
+
+// Enhanced navbar scroll effect
+window.addEventListener('scroll', function() {
+	const navbar = document.getElementById('navbar');
+	const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	
+	if (scrollTop > 100) {
+		navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+		navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)';
+		navbar.style.borderBottom = '1px solid rgba(99, 102, 241, 0.1)';
+	} else {
+		navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+		navbar.style.boxShadow = 'none';
+		navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.2)';
+	}
+});
+
+// Contact form submission
+function submitContactForm(event) {
+	event.preventDefault();
+	const form = event.target;
+	const submitBtn = form.querySelector('.submit-btn');
+	const originalText = submitBtn.textContent;
+	
+	// Simulate form submission
+	submitBtn.textContent = 'Sending...';
+	submitBtn.disabled = true;
+	
+	setTimeout(() => {
+		alert('Thank you for your message! We will get back to you within 24 hours.');
+		form.reset();
+		submitBtn.textContent = originalText;
+		submitBtn.disabled = false;
+	}, 2000);
+}
+
+// Add smooth scrolling for anchor links
+document.addEventListener('DOMContentLoaded', function() {
+	// Handle dropdown menu clicks
+	document.querySelectorAll('.dropdown-menu a').forEach(link => {
+		link.addEventListener('click', function(e) {
 			e.preventDefault();
-			const target = document.querySelector(this.getAttribute('href'));
-			if (target) {
-				target.scrollIntoView({
-					behavior: 'smooth',
-					block: 'start'
-				});
+			e.stopPropagation();
+			const onclick = this.getAttribute('onclick');
+			if (onclick) {
+				eval(onclick);
 			}
-			
-			// Close mobile menu if open
-			const menu = document.querySelector('.nav-menu');
-			menu.classList.remove('active');
 		});
 	});
 
-	// Navbar background on scroll
-	window.addEventListener('scroll', function() {
-		const navbar = document.getElementById('navbar');
-		if (window.scrollY > 50) {
-			navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-			navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-		} else {
-			navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-			navbar.style.boxShadow = 'none';
+	// Handle service card clicks
+	document.querySelectorAll('.service-card').forEach(card => {
+		card.addEventListener('click', function() {
+			const onclick = this.getAttribute('onclick');
+			if (onclick) {
+				eval(onclick);
+			}
+		});
+	});
+
+	// Handle industry card clicks
+	document.querySelectorAll('.industry-card').forEach(card => {
+		card.addEventListener('click', function() {
+			const onclick = this.getAttribute('onclick');
+			if (onclick) {
+				eval(onclick);
+			}
+		});
+	});
+
+	// Handle CTA button clicks
+	document.querySelectorAll('.cta-primary, .cta-secondary, .case-link').forEach(button => {
+		button.addEventListener('click', function(e) {
+			e.preventDefault();
+			const onclick = this.getAttribute('onclick');
+			if (onclick) {
+				eval(onclick);
+			}
+		});
+	});
+
+	// Handle nav menu clicks
+	document.querySelectorAll('.nav-menu > li > a').forEach(link => {
+		link.addEventListener('click', function(e) {
+			e.preventDefault();
+			const onclick = this.getAttribute('onclick');
+			if (onclick) {
+				eval(onclick);
+			}
+		});
+	});
+
+	// Handle footer link clicks
+	document.querySelectorAll('.footer-section a').forEach(link => {
+		link.addEventListener('click', function(e) {
+			e.preventDefault();
+			const onclick = this.getAttribute('onclick');
+			if (onclick) {
+				eval(onclick);
+			}
+		});
+	});
+
+	// Handle logo clicks
+	document.querySelector('.logo').addEventListener('click', function(e) {
+		e.preventDefault();
+		showPage('home');
+	});
+
+	// Close dropdowns when clicking outside
+	document.addEventListener('click', function(e) {
+		if (!e.target.closest('.nav-item')) {
+			document.querySelectorAll('.dropdown-menu').forEach(menu => {
+				menu.style.opacity = '0';
+				menu.style.visibility = 'hidden';
+				menu.style.transform = 'translateY(-10px)';
+			});
 		}
 	});
 
-	// Fade in animation on scroll
+	// Add intersection observer for animations
 	const observerOptions = {
 		threshold: 0.1,
 		rootMargin: '0px 0px -50px 0px'
@@ -49,53 +190,46 @@
 		});
 	}, observerOptions);
 
-	// Observe all fade-in elements
-	document.querySelectorAll('.fade-in').forEach(el => {
+	// Observe elements for animation
+	document.querySelectorAll('.service-card, .industry-card, .differentiator-card, .case-study-card, .content-card').forEach(el => {
 		el.style.opacity = '0';
 		el.style.transform = 'translateY(30px)';
-		el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+		el.style.transition = 'all 0.6s ease';
 		observer.observe(el);
 	});
 
-	// Form submission
-	function submitForm(event) {
-		event.preventDefault();
-		
-		// Get form data
-		const formData = new FormData(event.target);
-		const data = Object.fromEntries(formData);
-		
-		// Simple validation
-		if (!data.name || !data.email || !data.message) {
-			alert('Please fill in all required fields.');
-			return;
-		}
-		
-		// Simulate form submission
-		const submitBtn = event.target.querySelector('.submit-btn');
-		const originalText = submitBtn.textContent;
-		
-		submitBtn.textContent = 'Sending...';
-		submitBtn.disabled = true;
-		
-		setTimeout(() => {
-			alert('Thank you for your inquiry! We will contact you within 24 hours to discuss your project.');
-			event.target.reset();
-			submitBtn.textContent = originalText;
-			submitBtn.disabled = false;
-		}, 2000);
-	}
+	// Initialize with home page
+	showPage('home');
+});
 
-	// Add loading animation to CTA button
-	document.addEventListener('DOMContentLoaded', function() {
-		const ctaButton = document.querySelector('.cta-button');
-		if (ctaButton) {
-			ctaButton.addEventListener('mouseenter', function() {
-				this.style.transform = 'translateY(-2px) scale(1.05)';
-			});
-			
-			ctaButton.addEventListener('mouseleave', function() {
-				this.style.transform = 'translateY(-2px) scale(1)';
-			});
+// Add keyboard navigation support
+document.addEventListener('keydown', function(e) {
+	if (e.key === 'Escape') {
+		const menu = document.querySelector('.nav-menu');
+		const menuBtn = document.querySelector('.mobile-menu-btn');
+		if (menu.classList.contains('active')) {
+			menu.classList.remove('active');
+			menuBtn.textContent = '☰';
 		}
-	});
+	}
+});
+
+// Handle browser back/forward
+window.addEventListener('popstate', function() {
+	const hash = window.location.hash.slice(1);
+	if (hash && document.getElementById(hash)) {
+		showPage(hash);
+	} else {
+		showPage('home');
+	}
+});
+
+// Set initial page based on URL hash
+window.addEventListener('load', function() {
+	const hash = window.location.hash.slice(1);
+	if (hash && document.getElementById(hash)) {
+		showPage(hash);
+	} else {
+		showPage('home');
+	}
+});
