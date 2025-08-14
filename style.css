@@ -1115,6 +1115,8 @@ footer {
 	
 	.mobile-menu-btn {
 		display: block;
+		z-index: 1001; /* Add this line */
+		position: relative; /* Add this line */
 		background: none;
 		border: none;
 		font-size: 1.8rem;
@@ -1200,6 +1202,25 @@ footer {
 		min-height: 48px;
 	}
 
+	.nav-item.has-dropdown > a {
+		position: relative;
+	}
+
+	.nav-item.has-dropdown > a::after {
+		content: '▼';
+		position: absolute;
+		right: 1.5rem;
+		top: 50%;
+		transform: translateY(-50%);
+		transition: transform 0.3s ease;
+		font-size: 0.8rem;
+		color: #9ca3af;
+	}
+
+	.nav-item.has-dropdown.open > a::after {
+		transform: translateY(-50%) rotate(180deg);
+		color: #6366f1;
+	}
 	.nav-menu > li > a:hover,
 	.nav-menu > li.active > a {
 		background: linear-gradient(90deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
@@ -1225,8 +1246,29 @@ footer {
 		border: none;
 		border-top: 1px solid rgba(0, 0, 0, 0.05);
 		backdrop-filter: blur(10px);
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease;
 	}
 
+	.nav-item.has-dropdown > a::after {
+		content: '▼';
+		position: absolute;
+		right: 1.5rem;
+		top: 50%;
+		transform: translateY(-50%);
+		transition: transform 0.3s ease;
+		font-size: 0.8rem;
+	}
+
+	.nav-item.has-dropdown.open > a::after {
+		transform: translateY(-50%) rotate(180deg);
+	}
+	
+	.nav-item.has-dropdown.open .dropdown-menu {
+		max-height: 300px;
+	}
+	
 	.dropdown-menu li {
 		width: 100%;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.03);
@@ -1438,6 +1480,15 @@ footer {
 	.final-cta-title {
 		font-size: 2.5rem;
 	}
+}
+
+/* Add this CSS rule to ensure dropdowns work on desktop with clicks */
+@media (min-width: 769px) {
+    .nav-item.has-dropdown.open .dropdown-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+    }
 }
 
 /* Smaller Mobile Devices */
