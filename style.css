@@ -93,7 +93,7 @@ nav {
 	padding: 0;
 }
 
-.nav-menu > li > a {
+.nav-menu>li>a {
 	text-decoration: none;
 	color: #374151;
 	font-weight: 500;
@@ -104,8 +104,8 @@ nav {
 	cursor: pointer;
 }
 
-.nav-menu > li > a:hover,
-.nav-menu > li.active > a {
+.nav-menu>li>a:hover,
+.nav-menu>li.active>a {
 	background: linear-gradient(135deg, #6366f1, #8b5cf6);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -196,7 +196,7 @@ nav {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: radial-gradient(ellipse at center, rgba(255,255,255,0.15) 0%, transparent 70%);
+	background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
 	opacity: 0.6;
 }
 
@@ -923,6 +923,7 @@ footer {
 		opacity: 0;
 		transform: translateY(50px);
 	}
+
 	to {
 		opacity: 1;
 		transform: translateY(0);
@@ -934,6 +935,7 @@ footer {
 		opacity: 0;
 		transform: translateX(-30px);
 	}
+
 	to {
 		opacity: 1;
 		transform: translateX(0);
@@ -942,6 +944,7 @@ footer {
 
 /* Browser-Specific Fixes */
 @supports (-webkit-appearance: none) {
+
 	.service-card,
 	.industry-card,
 	.differentiator-card,
@@ -951,8 +954,9 @@ footer {
 }
 
 @-moz-document url-prefix() {
-	.nav-menu > li > a:hover,
-	.nav-menu > li.active > a {
+
+	.nav-menu>li>a:hover,
+	.nav-menu>li.active>a {
 		background: #6366f1;
 		color: white;
 		-webkit-background-clip: initial;
@@ -962,63 +966,65 @@ footer {
 
 /* High Resolution Screen Optimizations */
 @media (min-width: 1600px) {
+
 	.container,
 	.nav-container {
 		max-width: 1600px;
 		padding: 0 4rem;
 	}
-	
+
 	.services-grid,
 	.case-studies-grid {
 		gap: 3rem;
 	}
-	
+
 	.differentiators-grid,
 	.industries-grid {
 		gap: 2.5rem;
 	}
-	
+
 	.service-title {
 		font-size: 2rem;
 	}
-	
+
 	.service-description {
 		font-size: 1.1rem;
 	}
-	
+
 	.industry-title {
 		font-size: 1.4rem;
 	}
-	
+
 	.diff-title {
 		font-size: 1.8rem;
 	}
-	
+
 	.case-title {
 		font-size: 1.8rem;
 	}
 }
 
 @media (min-width: 1920px) {
+
 	.container,
 	.nav-container {
 		max-width: 1800px;
 		padding: 0 6rem;
 	}
-	
+
 	.section-title {
 		font-size: 4rem;
 	}
-	
+
 	.hero h1 {
 		font-size: 5.5rem;
 	}
-	
+
 	.services-grid,
 	.case-studies-grid {
 		gap: 3rem;
 	}
-	
+
 	.differentiators-grid,
 	.industries-grid {
 		gap: 3.5rem;
@@ -1026,25 +1032,26 @@ footer {
 }
 
 @media (min-width: 2560px) {
+
 	.container,
 	.nav-container {
 		max-width: 2200px;
 		padding: 0 8rem;
 	}
-	
+
 	.section-title {
 		font-size: 4.5rem;
 	}
-	
+
 	.hero h1 {
 		font-size: 6rem;
 	}
-	
+
 	.services-grid,
 	.case-studies-grid {
 		gap: 4rem;
 	}
-	
+
 	.differentiators-grid,
 	.industries-grid {
 		gap: 4rem;
@@ -1080,11 +1087,11 @@ footer {
 	.case-studies-grid {
 		grid-template-columns: repeat(2, 1fr);
 	}
-	
+
 	.case-study-card {
 		min-height: 400px;
 	}
-	
+
 	.differentiators-grid {
 		grid-template-columns: repeat(2, 1fr);
 		gap: 2.5rem;
@@ -1103,7 +1110,7 @@ footer {
 		padding: 0 1rem;
 		position: relative;
 	}
-	
+
 	.logo {
 		font-size: 1.3rem;
 		font-weight: 800;
@@ -1112,11 +1119,13 @@ footer {
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
 	}
-	
+
 	.mobile-menu-btn {
 		display: block;
-		z-index: 1001; /* Add this line */
-		position: relative; /* Add this line */
+		z-index: 1001;
+		/* Add this line */
+		position: relative;
+		/* Add this line */
 		background: none;
 		border: none;
 		font-size: 1.8rem;
@@ -1159,7 +1168,7 @@ footer {
 		transform: translateX(0);
 	}
 
-/* Remove the ::before pseudo-element that was creating extra space */
+	/* Remove the ::before pseudo-element that was creating extra space */
 
 	.nav-menu::after {
 		content: '';
@@ -1180,12 +1189,12 @@ footer {
 		border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 		flex-shrink: 0;
 	}
-	
+
 	.nav-item:last-child {
 		border-bottom: none;
 	}
 
-	.nav-menu > li > a {
+	.nav-menu>li>a {
 		padding: 0.8rem 1.5rem;
 		font-size: 1rem;
 		font-weight: 600;
@@ -1202,11 +1211,11 @@ footer {
 		min-height: 48px;
 	}
 
-	.nav-item.has-dropdown > a {
+	.nav-item.has-dropdown>a {
 		position: relative;
 	}
 
-	.nav-item.has-dropdown > a::after {
+	.nav-item.has-dropdown>a::after {
 		content: '▼';
 		position: absolute;
 		right: 1.5rem;
@@ -1217,12 +1226,13 @@ footer {
 		color: #9ca3af;
 	}
 
-	.nav-item.has-dropdown.open > a::after {
+	.nav-item.has-dropdown.open>a::after {
 		transform: translateY(-50%) rotate(180deg);
 		color: #6366f1;
 	}
-	.nav-menu > li > a:hover,
-	.nav-menu > li.active > a {
+
+	.nav-menu>li>a:hover,
+	.nav-menu>li.active>a {
 		background: linear-gradient(90deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
 		color: #6366f1;
 		-webkit-background-clip: initial;
@@ -1251,7 +1261,7 @@ footer {
 		transition: max-height 0.3s ease;
 	}
 
-	.nav-item.has-dropdown > a::after {
+	.nav-item.has-dropdown>a::after {
 		content: '▼';
 		position: absolute;
 		right: 1.5rem;
@@ -1261,14 +1271,14 @@ footer {
 		font-size: 0.8rem;
 	}
 
-	.nav-item.has-dropdown.open > a::after {
+	.nav-item.has-dropdown.open>a::after {
 		transform: translateY(-50%) rotate(180deg);
 	}
-	
+
 	.nav-item.has-dropdown.open .dropdown-menu {
 		max-height: 300px;
 	}
-	
+
 	.dropdown-menu li {
 		width: 100%;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.03);
@@ -1316,21 +1326,21 @@ footer {
 		transform: translateX(3px);
 	}
 
-	.nav-item:has(.dropdown-menu) > a::after {
+	.nav-item:has(.dropdown-menu)>a::after {
 		content: '▼';
 		font-size: 0.8rem;
 		color: #9ca3af;
 		transition: all 0.3s ease;
 		transform: rotate(0deg);
 	}
-	
-	.nav-item:hover > a::after,
-	.nav-item.active > a::after {
+
+	.nav-item:hover>a::after,
+	.nav-item.active>a::after {
 		color: #6366f1;
 		transform: rotate(180deg);
 	}
 
-	.nav-menu.active ~ .mobile-menu-btn {
+	.nav-menu.active~.mobile-menu-btn {
 		position: fixed;
 		top: 1rem;
 		right: 1rem;
@@ -1357,12 +1367,29 @@ footer {
 		margin-bottom: 0;
 	}
 
-	.nav-menu.active .nav-item:nth-child(1) { animation-delay: 0.1s; }
-	.nav-menu.active .nav-item:nth-child(2) { animation-delay: 0.15s; }
-	.nav-menu.active .nav-item:nth-child(3) { animation-delay: 0.2s; }
-	.nav-menu.active .nav-item:nth-child(4) { animation-delay: 0.25s; }
-	.nav-menu.active .nav-item:nth-child(5) { animation-delay: 0.3s; }
-	.nav-menu.active .nav-item:nth-child(6) { animation-delay: 0.35s; }
+	.nav-menu.active .nav-item:nth-child(1) {
+		animation-delay: 0.1s;
+	}
+
+	.nav-menu.active .nav-item:nth-child(2) {
+		animation-delay: 0.15s;
+	}
+
+	.nav-menu.active .nav-item:nth-child(3) {
+		animation-delay: 0.2s;
+	}
+
+	.nav-menu.active .nav-item:nth-child(4) {
+		animation-delay: 0.25s;
+	}
+
+	.nav-menu.active .nav-item:nth-child(5) {
+		animation-delay: 0.3s;
+	}
+
+	.nav-menu.active .nav-item:nth-child(6) {
+		animation-delay: 0.35s;
+	}
 
 	.hero {
 		padding: 140px 0 80px;
@@ -1451,12 +1478,12 @@ footer {
 		grid-template-columns: 1fr;
 		gap: 2rem;
 	}
-	
+
 	.case-study-card {
 		min-height: auto;
 		padding: 2rem;
 	}
-	
+
 	.case-metrics {
 		grid-template-columns: 1fr 1fr;
 		gap: 1rem;
@@ -1484,11 +1511,11 @@ footer {
 
 /* Add this CSS rule to ensure dropdowns work on desktop with clicks */
 @media (min-width: 769px) {
-    .nav-item.has-dropdown.open .dropdown-menu {
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: translateY(0) !important;
-    }
+	.nav-item.has-dropdown.open .dropdown-menu {
+		opacity: 1 !important;
+		visibility: visible !important;
+		transform: translateY(0) !important;
+	}
 }
 
 /* Smaller Mobile Devices */
@@ -1496,16 +1523,16 @@ footer {
 	.nav-container {
 		padding: 0 0.8rem;
 	}
-	
+
 	.logo {
 		font-size: 1.1rem;
 	}
-	
-	.nav-menu > li > a {
+
+	.nav-menu>li>a {
 		padding: 1rem 1.5rem;
 		font-size: 1rem;
 	}
-	
+
 	.dropdown-menu a {
 		padding: 0.8rem 2.5rem;
 		font-size: 0.95rem;
@@ -1543,6 +1570,7 @@ footer {
 
 /* CSS Grid Fallback for Older Browsers */
 @supports not (display: grid) {
+
 	.services-grid,
 	.industries-grid,
 	.case-studies-grid,
@@ -1551,7 +1579,7 @@ footer {
 		flex-wrap: wrap;
 		justify-content: center;
 	}
-	
+
 	.service-card,
 	.industry-card,
 	.case-study-card,
@@ -1569,7 +1597,7 @@ footer {
 		display: table;
 		width: 100%;
 	}
-	
+
 	.logo,
 	.nav-menu {
 		display: table-cell;
@@ -1579,20 +1607,23 @@ footer {
 
 /* Touch Device Optimizations */
 @media (hover: none) and (pointer: coarse) {
+
 	.service-card:hover,
 	.industry-card:hover,
 	.differentiator-card:hover,
 	.case-study-card:hover {
 		transform: none;
 	}
-	
-	.nav-menu > li > a {
+
+	.nav-menu>li>a {
 		padding: 1.2rem 1.5rem;
 	}
 }
 
 /* High DPI Screen Optimizations */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
 	.service-icon,
 	.diff-icon {
 		-webkit-transform: translateZ(0);
@@ -1602,6 +1633,7 @@ footer {
 
 /* Accessibility & Preferences */
 @media (prefers-reduced-motion: reduce) {
+
 	*,
 	*::before,
 	*::after {
@@ -1612,6 +1644,7 @@ footer {
 }
 
 @media (prefers-contrast: high) {
+
 	.service-card,
 	.industry-card,
 	.differentiator-card {
@@ -1630,15 +1663,15 @@ footer {
 		background: rgba(17, 24, 39, 0.98);
 		color: white;
 	}
-	
-	.nav-menu > li > a {
+
+	.nav-menu>li>a {
 		color: #f3f4f6;
 	}
-	
+
 	.dropdown-menu {
 		background: rgba(31, 41, 55, 0.8);
 	}
-	
+
 	.dropdown-menu a {
 		color: #d1d5db;
 	}
@@ -1652,10 +1685,42 @@ footer {
 		box-shadow: none !important;
 		text-shadow: none !important;
 	}
-	
+
 	.nav-menu,
 	.mobile-menu-btn,
 	.hero::before {
 		display: none;
 	}
+}
+
+/* Alert Animations */
+@keyframes slideInRight {
+	from {
+		opacity: 0;
+		transform: translateX(100px) scale(0.8);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0) scale(1);
+	}
+}
+
+@keyframes slideOutRight {
+	from {
+		opacity: 1;
+		transform: translateX(0) scale(1);
+	}
+
+	to {
+		opacity: 0;
+		transform: translateX(100px) scale(0.8);
+	}
+}
+
+/* Alert Hover Effect */
+.alert:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+	transition: all 0.2s ease;
 }
